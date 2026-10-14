@@ -5,6 +5,8 @@ import com.automation.personal_agent.service.JobApplicationService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class JobApplicationController {
 
@@ -15,7 +17,7 @@ public class JobApplicationController {
     }
 
     @GetMapping("/api/jobs")
-    public JobApplication getJob() {
-        return jobApplicationService.getJobApplication();
+    public List<JobApplication> getAllJobs() {
+        return jobApplicationService.getAllJobApplications();
     }
 }

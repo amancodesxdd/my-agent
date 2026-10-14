@@ -1,20 +1,8 @@
-package com.automation.personal_agent.service;
+package com.automation.personal_agent.repository;
 
 import com.automation.personal_agent.model.JobApplication;
-import com.automation.personal_agent.repository.JobApplicationRepository;
-import org.springframework.stereotype.Service;
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Service
-public class JobApplicationService {
-
-    private final JobApplicationRepository repository;
-
-    public JobApplicationService(JobApplicationRepository repository) {
-        this.repository = repository;
-    }
-
-    public List<JobApplication> getAllJobApplications() {
-        return repository.findAll();
-    }
+public interface JobApplicationRepository
+        extends JpaRepository<JobApplication, Long> {
 }
